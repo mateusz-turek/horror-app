@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Horror</title>
+</head>
+<body>
+<h1>Sample Horror</h1>
+<p>Authors:</p>
+<p th:text="${horror.getAuthor()}"></p>
+<p>Title:</p>
+<p th:text="${horror.getTitle()}"></p>
+<p>Type:</p>
+<p th:text="${horror.getHorrorType()}"></p>
+<p>Release Date:</p>
+<p th:text="${horror.getReleaseDate()}"></p>
+<p>=========================================</p>
+</body>
+<tr th:each="horror: ${horrors}">
+    <td th:text="${horror.getAuthor()}"></td>
+    <td th:text="${horror.getHorrorType()}"></td>
+    <td th:text="${horror.getReleaseDate()}"></td>
+    <td th:text="${horror.getTitle()}"></td>
+    <p>=====================================</p>
+</tr>
+<form th:action="@{/addHorror}" th:object="${newHorror}" method="post">
+    <p>Add Horror</p>
+    <p>id:<input type="text" placeholder="id" ></p>
+    <p>Title:<input type="text" placeholder="Title" th:field="*{title}"></p>
+
+    <p>Author:<input type="text" placeholder="Author" th:field="*{author}" ></p>
+    <!-- IDK-->
+   <!-- <p>Release Date:<input type="date" th:field="*{releaseDate}" th:value="${newHorror.getReleaseDate()}"></p> -->
+    <!-- IDK-->
+    <select th:field="*{horrorType}">
+        <option th:value="${horror.getHorrorType().game}">game</option>
+        <option th:value="${horror.getHorrorType().movie}">movie</option>
+    </select>
+    <p><input type="submit" value="Add Horror"></p>
+</form>
+</html>
