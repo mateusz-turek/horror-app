@@ -1,5 +1,7 @@
 package project4.horrormoviesapp.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 
 public class Horror {
@@ -8,6 +10,7 @@ public class Horror {
     private String title;
     private HorrorType horrorType;
     private String author;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;
 
 

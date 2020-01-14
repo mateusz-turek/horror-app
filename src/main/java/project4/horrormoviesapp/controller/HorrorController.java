@@ -19,7 +19,7 @@ public class HorrorController {
         this.horrorList = new ArrayList<>();
         horrorList.add(new Horror(1L,"Layers of Fear", HorrorType.game,"Bloober Team"
                 , LocalDate.of(2016,2,16)));
-        horrorList.add(new Horror(2L,"Outlast", HorrorType.game,"Bloober Team"
+        horrorList.add(new Horror(2L,"Outlast", HorrorType.game,"Red Barrels"
                 , LocalDate.of(2013,9,4)));
     }
 
